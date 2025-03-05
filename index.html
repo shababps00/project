@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Donation - Save a Life</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Global Styles */
         body {
@@ -15,308 +14,204 @@
             background-color: #f7f7f7;
             color: #333;
             overflow-x: hidden;
-            scroll-behavior: smooth; /* Smooth scrolling */
-            transition: all 0.4s ease-in-out; /* Add a smooth page transition */
+            scroll-behavior: smooth;
+            transition: all 0.4s ease-in-out;
         }
 
+        /* Header - Top Bar */
         header {
-            background: linear-gradient(45deg, #6a1b9a, #ab47bc); /* Purple gradient */
-            color: white;
-            padding: 10px 0;
-            text-align: center;
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
-            top: 0; /* Keep it at the top */
+            top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Align content to the bottom */
-            height: 100px; /* Set a fixed height for the navbar */
-            animation: fadeInUp 2s ease-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Header Animations */
-        header h1 {
+        header .logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 25px;
-            text-transform: uppercase;
-            font-weight: 500;
-            letter-spacing: 0px;
-            animation: fadeInUp 2s ease-out;
-            margin-top:500px;
-            margin-bottom: 5px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
         }
 
-        header h4 {
-            font-size: 22px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeInUp 2s ease-out;
-            margin-top: 0px;
-            margin-bottom: 0px;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Header Navigation */
         header nav {
-            margin-top: 20px;
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            animation: fadeInUp 2s ease-out;
-            flex-wrap: nowrap;  /* Ensures the items stay in one line */
+            gap: 20px;
         }
 
         header nav a {
-            color: white;
-            font-size: 12px;
-            font-weight: 500;
+            color: #333;
             text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
             text-transform: uppercase;
-            transition: transform 0.3s ease, color 0.3s ease;
-            display: flex;  /* Makes sure the icon and text are aligned horizontally */
-            align-items: center;  /* Aligns text and icon vertically */
-            gap: 5px;  /* Adds space between the icon and text */
+            transition: color 0.3s ease;
         }
 
         header nav a:hover {
-            color: #ffeb3b;
-            transform: scale(1.1);
+            color: #0071e3; /* Apple blue accent color */
         }
 
         /* Hero Section */
         .hero {
-            background: url('file:///home/user/Downloads/bg.jpeg') no-repeat center center;
+            background: url('your-hero-image.jpg') no-repeat center center;
             background-size: cover;
-            height: 450px;
+            height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 120px; 
-            position: relative;
-            animation: fadeIn 3s ease-out;
-            background-attachment: fixed; /* Create a parallax effect */
+            color: white;
+            text-align: center;
+            padding-top: 100px;
         }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
 
-        /* Call to Action Buttons */
         .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            animation: fadeInUp 2s ease-out;
+            margin-top: 30px;
         }
 
         .cta-buttons a {
-            background-color: #6a1b9a;
+            background-color: #0071e3; /* Apple blue */
             color: white;
             padding: 15px 30px;
             font-size: 18px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 25px;
+            font-weight: 600;
             text-transform: uppercase;
-            font-weight: 500;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .cta-buttons a:hover {
-            background-color: #ab47bc;
-            transform: scale(1.05);
+            background-color: #005bb5;
         }
 
-        /* Content Section */
+        /* Section with Cards */
         .content {
-            padding: 40px 20px;
+            padding: 60px 20px;
             display: flex;
             justify-content: space-around;
-            flex-wrap: wrap;
             gap: 20px;
-            animation: fadeInUp 2s ease-out;
+            flex-wrap: wrap;
         }
 
-        .content .card {
+        .card {
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 30%;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 280px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .content .card:hover {
+        .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
         }
 
-        .content .card h3 {
+        .card h3 {
             font-size: 22px;
             margin-bottom: 15px;
-            color: #6a1b9a;
+            color: #333;
         }
 
-        .content .card p {
+        .card p {
             font-size: 16px;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        /* Blood Drop Animation */
-        .blood-drop {
-            position: absolute;
-            top: 25%;
-            left: 5%;
-            width: 420px;
-            height: 420px;
-            background: url('/home/user/Downloads/b.jpg') no-repeat center center;
-            background-size: contain;
-            animation: dropAnimation 2s ease-in-out infinite;
-        }
-
-        @keyframes dropAnimation {
-            0% {
-                transform: scale(1);
-                opacity: 0.7;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 0.7;
-            }
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: #6a1b9a;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            animation: fadeInUp 2s ease-out;
-        }
-
-        #contact h2 {
-            font-size: 36px;
+            color: #666;
             margin-bottom: 20px;
         }
 
-        #contact p {
-            font-size: 18px;
-        }
-
-        #contact .contact-info {
-            margin-top: 20px;
-        }
-
-        #contact .contact-info i {
-            margin-right: 10px;
-        }
-
-        /* Styling for clickable text */
-        .content .card a {
-            display: block;
-            background-color: transparent;
-            color: #6a1b9a;
-            font-size: 18px;
+        .card a {
+            color: #0071e3;
             text-decoration: none;
-            text-transform: uppercase;
-            margin-top: 15px;
-            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 16px;
+            transition: color 0.3s ease;
         }
 
-        .content .card a:hover {
-            color: #ab47bc;
-            transform: scale(1.05);
+        .card a:hover {
+            color: #005bb5;
         }
 
-        /* Mobile and Tablet Responsive Styles */
-        @media (max-width: 1024px) {
-            header nav {
-                flex-direction: row;
-                gap: 15px;  /* Space between links on smaller screens */
-                justify-content: center;
-            }
+        /* Footer */
+        footer {
+            background-color: #f1f1f1;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
 
-            header nav a {
-                font-size: 18px;
-                gap: 8px;  /* Slightly reduced space between text and icons */
-            }
+        footer p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        footer a {
+            color: #0071e3;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #005bb5;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="/home/user/Downloads/blood.png" alt="Logo" style="width: 100px; position: absolute; left: 50px; top: 50px;">
-        <div> 
-            <h1>Blood Unity</h1>
-            <h4>"Bleed for a cause"</h4>
-        </div>
+        <div class="logo">Blood Unity</div>
         <nav>
-            <a href="donate.html"><i class="fas fa-heartbeat"></i> Donate</a>
-            <a href="request.html"><i class="fas fa-hands-helping"></i> Request</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
-            <a href="#contact"><i class="fas fa-phone-alt"></i> Contact Us</a>
-            <a href="Login.html"><i class="fas fa-phone-alt"></i> Login</a>
+            <a href="donate.html">Donate</a>
+            <a href="request.html">Request</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="blood-drop"></div>
-    </section>
-
-    <section class="cta-buttons">
-        <a href="donate.html">Donate Blood</a>
-        <a href="request.html">Request Blood</a>
-        <a href="Login.html">Login</a>
+        <div>
+            <h1>Save a Life, Donate Blood</h1>
+            <div class="cta-buttons">
+                <a href="donate.html">Donate Now</a>
+                <a href="request.html">Request Blood</a>
+            </div>
+        </div>
     </section>
 
     <section class="content">
         <div class="card">
             <h3><a href="why-donate.html">Why Donate Blood?</a></h3>
+            <p>Learn the importance of donating blood and how it can save lives.</p>
         </div>
         <div class="card">
             <h3><a href="how-it-works.html">How It Works</a></h3>
+            <p>Understand the process of blood donation and how easy it is to help.</p>
         </div>
         <div class="card">
             <h3><a href="find-center.html">Find a Donation Center</a></h3>
+            <p>Locate your nearest donation center and make a difference today.</p>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need assistance, feel free to reach out.</p>
-        <div class="contact-info">
-            <p><i class="fas fa-phone-alt"></i> Phone: 123-456-7890</p>
-            <p><i class="fas fa-envelope"></i> Email: info@bloodunity.org</p>
-            <p><i class="fas fa-map-marker-alt"></i> Address: 123 Blood Ave, City, State</p>
-        </div>
-    </section>
+    <footer>
+        <p>&copy; 2025 Blood Unity. All Rights Reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+    </footer>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For icons -->
 </body>
 </html>
 

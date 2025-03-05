@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Blood Unity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            color: #6a1b9a;
+        }
+
+        .register-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-container button:hover {
+            background-color: #ab47bc;
+        }
+
+        .register-container p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .register-container p a {
+            color: #6a1b9a;
+            text-decoration: none;
+        }
+
+        .register-container p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Add responsiveness for smaller devices */
+        @media (max-width: 600px) {
+            .register-container {
+                width: 90%;
+            }
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Create an Account</h2>
+        <form id="registerForm" action="index.html" method="POST" onsubmit="return validatePasswords()">
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Register</button>
+            <p class="error-message" id="passwordError" style="display:none;">Passwords do not match!</p>
+            <p class="success-message" id="successMessage" style="display:none;">Registration successful!</p>
+        </form>
+        <p>Already have an account? <a href="Login.html">Login Here</a></p>
+    </div>
+
+    <script>
+        function validatePasswords() {
+            var password = document.querySelector('input[name="password"]').value;
+            var confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+            var errorMessage = document.getElementById('passwordError');
+            var successMessage = document.getElementById('successMessage');
+
+            if (password !== confirmPassword) {
+                errorMessage.style.display = 'block'; // Show error message
+                successMessage.style.display = 'none'; // Hide success message
+                return false; // Prevent form submission
+            } else {
+                errorMessage.style.display = 'none'; // Hide error message
+                successMessage.style.display = 'block'; // Show success message
+                setTimeout(function() {
+                    // Redirect after 3 seconds (3000ms)
+                    window.location.href = 'index.html';
+                }, 2000); // 2-second delay
+                return false; // Prevent form submission so we can handle the redirect after the delay
+            }
+        }
+    </script>
+
+</body>
+</html>
+

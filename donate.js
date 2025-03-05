@@ -1,17 +1,14 @@
 document.getElementById("donationForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevents the form from refreshing the page
+    event.preventDefault(); // Prevents the form from submitting normally
 
+    // Display confirmation message
     const confirmationMessage = document.getElementById("confirmationMessage");
-    
-    // Simulate form submission process
+    confirmationMessage.style.display = "block";
+
+    // Optionally, you can reset the form after a delay
     setTimeout(function() {
-        confirmationMessage.style.display = "block"; // Show confirmation message
-    }, 500);
-    
-    // Reset the form after a short delay
-    setTimeout(function() {
-        document.getElementById("donationForm").reset();
-        confirmationMessage.style.display = "none"; // Hide confirmation message
-    }, 2000);
+        document.getElementById("donationForm").reset(); // Reset the form fields
+        confirmationMessage.style.display = "none"; // Hide confirmation message after a while
+    }, 3000); // Wait for 3 seconds before hiding the message
 });
 
