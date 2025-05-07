@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Blood Donation Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blood Donation Center</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="donate.html">Donate</a>
+            <a href="request.html">Request</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="donate-form-container">
+        <h2>About Us</h2>
+        <p style="font-size: 18px; line-height: 1.6;">
+            We are a community-driven blood donation center committed to saving lives. Our mission is to connect blood donors with those in need in the most efficient and compassionate way possible.
+            <br><br>
+            Whether you're donating blood or requesting it in an emergency, our platform is here to serve you with care, urgency, and trust. Together, we make a difference.
+        </p>
+    </section>
+</body>
+</html>
